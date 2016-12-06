@@ -329,6 +329,6 @@ A colon before the `head-name` sends no data to the remote repo's head
 -		OFFLINE: does not need connection for anything else but push and pull
 -		Selective SHARING: have a full copy means you can share your repo with a selected group before pushing to master
 
-***disadvantages: large binary files/long history may take up time & space
+***disadvantages***: large binary files/long history may take up time & space
 
 
