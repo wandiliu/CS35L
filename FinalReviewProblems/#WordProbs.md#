@@ -56,7 +56,7 @@ Some languages, such as C and C++, are prone to buffer overflows as they have no
 
 Because it's not a distributed version control system, we can use ```svn log``` which shows you the author information of the commit 
 
-####7. In 2009 an attack on SSL (Secure Socket Layer) Certificates was published online that allowed spoofing of domain names. This attack allowed a malicious site to publish valid security certificates which appeared to be for a different site. For example, www.goodsite.com.evilsite.com (a subdomain of evilsite.com) would claim to be www.goodsite.com by having a non-printable null character (â€œwww.goodsite.com\0.evilsite.comâ€) in its name. Given that every domain name is exactly 32 characters (with null byes on the end when less than 32 characters are used), eliminate this spoofing vulnerability from the following function:
+####7. In 2009 an attack on SSL (Secure Socket Layer) Certificates was published online that allowed spoofing of domain names. This attack allowed a malicious site to publish valid security certificates which appeared to be for a different site. For example, www.goodsite.com.evilsite.com (a subdomain of evilsite.com) would claim to be www.goodsite.com by having a non-printable null character (œôòüwww.goodsite.com\0.evilsite.comœôòý) in its name. Given that every domain name is exactly 32 characters (with null byes on the end when less than 32 characters are used), eliminate this spoofing vulnerability from the following function:
 ```c
 /* Returns 0 when the certificate is valid for the site and non-zero otherwise*/ int isValidForSite(char* domainName, char* certificateDomainName)
 {
@@ -91,14 +91,14 @@ Let's answer this by contradiction. Assuming that we have someone recording our 
 
 ####9. which of the following bash commands would be most appropriate to compile a project and print one line summary of the build status? Justify your answer by critiquing all three commands.
 
-a. make || echo â€œBuild failed!â€ && echo â€œBuild succeededâ€
+a. make || echo œôòüBuild failed!œôòý && echo œôòüBuild succeededœôòý
 -  This command will compile the project, then regardless of its output, output both "Build failed!" and "Build succeeded". This is pretty bad because it doesn't give us the correct build status.
 
-**b. make && echo â€œBuild Succeededâ€ || echo â€œBuild failed!â€**
+**b. make && echo œôòüBuild Succeededœôòý || echo œôòüBuild failed!œôòý**
 -  This command first try to execute the project, then if it was successful, it will output the left `echo` statment, which is bundled together with `make` through an `&&` condition. If make was unsuccessful, the bundle in its entirety would not execute, which means the right echo statement, which is also the other `||` option, will be outputted.
 
-c. make || echo â€œBuild succeededâ€ && echo â€œBuild failed!â€
--  This command will try the execute the project. If it succeeds, the other half of the `||` will not execute, which means that we will get no status of "successful compilation". What's worse is that if the program failed to `make`, the command will output *both* â€œBuild succeededâ€ **and **  â€œBuild failed!â€...***terrible***
+c. make || echo œôòüBuild succeededœôòý && echo œôòüBuild failed!œôòý
+-  This command will try the execute the project. If it succeeds, the other half of the `||` will not execute, which means that we will get no status of "successful compilation". What's worse is that if the program failed to `make`, the command will output *both* œôòüBuild succeededœôòý **and **  œôòüBuild failed!œôòý...***terrible***
 
 ####10. Write a     command that replaced every phone number in ./contact.html with its digit-only form. The format to consider is (ddd)-ddd-dddd. For example, (555)-555-5555 becomes 5555555555. Ignore phone numbers formatted incorrectly (for example, too many digits).
 To do this we need to have basic knowledge of ```sed``` (edit command) and Regex expressions. We want to remove the '(', ')', and '-' characters, and keep all the numerals. We have two options - create a filter for only numerals, or remove all the non-numeric characters.
@@ -126,3 +126,11 @@ cat $file $file > $newfile
 	2.	files are fed in as arguments, where `$0` is the script itself, `$1` is the first argument, and so on
 	3.	for `cat`, `>` is replacing all previous content, while `>>` appends to previous content
 	4.	Remember to deference using `$`!
+	5.	To try this out yourself, execute the following in your shell:
+bash```
+$ chmod +x Prob11.txt #give the file execution rights
+$ ls -l #to see that 128_mb.txt is currently 0 bytes, and one_mb.txt is one byte
+$ ./Prob11.txt one_mb.txt 128_mb.txt #execute the script with the above files as arguments
+$ ls -l #check the files again, this time, 128_mb.txt should be 128 bytes! 
+```
+####12a. Make a class Point 3 that represents a 3-dimensional point. A constructor is optional, but you must implement the function distance2(...) that will compute the distance squared (e.g. (x_1 - x_2)^2 + (y_1-y_2)^2 + (z_1-z_2)T between the current point and given point and return it.
