@@ -14,17 +14,14 @@ is
 ```
 *Note*: If the bash prompt errors out to `-bash: ./Prob2.txt: /bin/grep: bad interpreter: No such file or directory`, try to run the code on the linux server
 
-####2.2 What about 
-```
-#! /usr/bin/env	python
-```
+####2.2 What about ```#! /usr/bin/env	python```?
 
 Correct output: 
 ```
 SyntaxError: invalid syntax
 ```
 
-Explanation: Python has a different syntax, you at least need to call the main function to execute
+**Explanation**: Python has a different syntax, you at least need to call the main function to execute
 
 ####3. What's a symbolic link (soft link), and how is it different from a non-symbolic (hard) link? 
 -      A symbolic link contains the name(reference) of the file it's pointing to
@@ -48,7 +45,7 @@ Some languages, such as C and C++, are prone to buffer overflows as they have no
 	1.	 A program (malicious) attempts to put more data (take up more memory) than the buffer is supposed to hold
 	2.	 A program attempts to put the data in a memory area (what's set aside for the function) that's past the buffer
 	-	 This can crash the program, corrupt data, or cause the execution of malicious code
--	It's a **software security vulnerability*** 
+-	It's a **software security vulnerability**
 -	In a classic buffer overflow, the call stack is overwritten and the function's return pointer is set to transfer control to malicious code when it returns
 - 	Buffer overflow typically happens in 
 	1.     External Data: Programs that relies on external data to control its behavior
@@ -112,6 +109,7 @@ $ sed 's/[()-]//g'
    2.	To specify for only numerals, we use \1 to \9.
 
 ####11. You have a file called one_mb which is exactly 1 megabyte in size. You want to create from it a file of exactly 128 megabytes in size. Please write a shell script to do this with at most 9 lines and no loops, if statements, recursion, or any other logic control structures. Each command, including parameters, must be less than 100 characters in length. (max 9 lines)
+<<<<<<< HEAD
 ```
 #!/bin/bash
 file="$1"
@@ -131,3 +129,6 @@ cat $file $file > $newfile
 	4.	Remember to deference using `$`!
 
  
+=======
+cat one_mb | 
+>>>>>>> 2415d1fd2e964d4e081c6f52f6d0f5ada98d4b32
