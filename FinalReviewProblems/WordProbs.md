@@ -222,14 +222,13 @@ int factorial(int n) {
 ```
 
 #####How to apply a patch:
-'''sh
+```sh
 diff –u original_file modified_file
 
 --- path/to/original_file
 
 +++ path/to/modified_file
 
-```
 
 @@ -l,s +l,s @@
 	–    @@: beginning of a hunk
@@ -239,3 +238,4 @@ diff –u original_file modified_file
   		-	- sign was deleted from the original 
   		-	+ sign was added to the original
   		-	else: stayed the same 	
+```
