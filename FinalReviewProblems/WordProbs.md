@@ -121,13 +121,15 @@ cat $file $file > $newfile
 cat $newfile $newfile > $file
 cat $file $file > $newfile
 ```
+
 #####NOTE:
 	1.	Bash scripts should begin with #!/bin/bash
-	2.	files are fed in as arguments, where `$0` is the script itself, `$1` is the first argument, and so on
-	3.	for `cat`, `>` is replacing all previous content, while `>>` appends to previous content
-	4.	Remember to deference using `$`!
+	2.	files are fed in as arguments, where $0 is the script itself, $1 is the first argument, and so on
+	3.	for cat, > is replacing all previous content, while >> appends to previous content
+	4.	Remember to deference using $
 	5.	To try this out yourself, execute the following in your shell:
-bash```
+	
+```sh
 $ chmod +x Prob11.txt #give the file execution rights
 $ ls -l #to see that 128_mb.txt is currently 0 bytes, and one_mb.txt is one byte
 $ ./Prob11.txt one_mb.txt 128_mb.txt #execute the script with the above files as arguments
