@@ -162,9 +162,11 @@ class Point3:
 [code omitted]
 Write your new function(s) below:
 
-Solution:
+**Solution**:
+
 Not sure because the function wasn't posted :( BUT because we know that we need 3 child threads, we'll simply divide up the testing algorithm (call that foo, whatever it is), which probably looks at all the numbers from 1 to the number itself, and seeing if original_num%factor_num == 0. So, we will need a function that takes in, we'll call it ```void *foo(int *obj)```, and the original function ```main()```.
-``` 
+
+```c
 void * foo (void * obj) //obj will store the 
 {
 int partition = *(int *) obj;
@@ -194,40 +196,46 @@ int main (int argc, char **argv){
 ```
 
 ####14. Given the following buggy C program to compute factorials (main.c):
-```
+
+```c
 #include ,stdio.h>
-int factorial(int n) {
-return n* factorial (n-1); }
+	int factorial(int n) {
+		return n* factorial (n-1); }
 ```
 [Rest of code omitted]
 And the following patch to correct the buggy program (called fix.patch): [patch omitted]
 Notice the typo of “Fractorial” on line 29 on the patch which should be “Factorial”> Please make a patch that can be applied to “fix.patch” and fix the typo (you do not need to use all lines) on the next page.
 
 Solution:
-```
+
+```c
 #include <stdio.h>
 
 int factorial(int n) {
-if (n > 1){
-   return n* factorial (n-1); 
-}
-else{
-	return 1; //base case
-}
+	if (n > 1){
+   		return n* factorial (n-1); 
+	}
+	else{
+		return 1; //base case
+	}
 }
 ```
+
 #####How to apply a patch:
+'''sh
 diff –u original_file modified_file
 
 --- path/to/original_file
 
 +++ path/to/modified_file
 
+```
+
 @@ -l,s +l,s @@
-–    @@: beginning of a hunk
-–    l: beginning line number
-–    s: number of lines the change hunk applies to for each file
-–    A line with a:
-  - sign was deleted from the original 
-  + sign was added to the original
-  else: stayed the same 
+	–    @@: beginning of a hunk
+	–    l: beginning line number
+	–    s: number of lines the change hunk applies to for each file
+	–    A line with a:
+  		-	- sign was deleted from the original 
+  		-	+ sign was added to the original
+  		-	else: stayed the same 	
