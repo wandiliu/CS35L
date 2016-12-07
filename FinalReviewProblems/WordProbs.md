@@ -14,7 +14,7 @@ is
 ```
 *Note*: If the bash prompt errors out to `-bash: ./Prob2.txt: /bin/grep: bad interpreter: No such file or directory`, try to run the code on the linux server
 
-####2.2 What about ```#! /usr/bin/env	python```?
+####2.2 What about ```#! /usr/bin/env python```?
 
 Correct output: 
 ```
@@ -41,16 +41,16 @@ SyntaxError: invalid syntax
 ####5.1 What is buffer overflow?
 In short, a buffer overflow is caused by the manipulation of a computer's memory to control program execution. They're mainly **stack based** or **heap based**.
 Some languages, such as C and C++, are prone to buffer overflows as they have no built-in protection against accessing or overwriting data.
--	A buffer overflow happens when 
-	1.	 A program (malicious) attempts to put more data (take up more memory) than the buffer is supposed to hold
-	2.	 A program attempts to put the data in a memory area (what's set aside for the function) that's past the buffer
-	-	 This can crash the program, corrupt data, or cause the execution of malicious code
--	It's a **software security vulnerability**
--	In a classic buffer overflow, the call stack is overwritten and the function's return pointer is set to transfer control to malicious code when it returns
-- 	Buffer overflow typically happens in 
-	1.     External Data: Programs that relies on external data to control its behavior
-	2.     Program that depends on the properties of data that's external to the scope of the code
-	3.     Programs that're overly complex, whose behavior the programmer cannot actually predict
+-    A buffer overflow happens when 
+     1.	       A program (malicious) attempts to put more data (take up more memory) than the buffer is supposed to hold
+     2.	        A program attempts to put the data in a memory area (what's set aside for the function) that's past the buffer
+     -		 This can crash the program, corrupt data, or cause the execution of malicious code
+-    It's a **software security vulnerability**
+-    In a classic buffer overflow, the call stack is overwritten and the function's return pointer is set to transfer control to malicious code when it returns
+-    Buffer overflow typically happens in 
+     1.     External Data: Programs that relies on external data to control its behavior
+     2.     Program that depends on the properties of data that's external to the scope of the code
+     3.     Programs that're overly complex, whose behavior the programmer cannot actually predict
 
 ####6. As part of a class project you and a partner share access to an svn repository hosted on the class server. One night, without your knowledge, your partner adds a backdoor (a secret piece of code allowing remote control of the project) to the project repository. However, you do not realize this until after the project is turned in. How can you show (with reasonable certainty) that you did not add the back door to the project? List the specific commands you would use and what useful information they would provide.
 
@@ -109,7 +109,6 @@ $ sed 's/[()-]//g'
    2.	To specify for only numerals, we use \1 to \9.
 
 ####11. You have a file called one_mb which is exactly 1 megabyte in size. You want to create from it a file of exactly 128 megabytes in size. Please write a shell script to do this with at most 9 lines and no loops, if statements, recursion, or any other logic control structures. Each command, including parameters, must be less than 100 characters in length. (max 9 lines)
-<<<<<<< HEAD
 ```
 #!/bin/bash
 file="$1"
@@ -127,8 +126,3 @@ cat $file $file > $newfile
 	2.	files are fed in as arguments, where `$0` is the script itself, `$1` is the first argument, and so on
 	3.	for `cat`, `>` is replacing all previous content, while `>>` appends to previous content
 	4.	Remember to deference using `$`!
-
- 
-=======
-cat one_mb | 
->>>>>>> 2415d1fd2e964d4e081c6f52f6d0f5ada98d4b32
