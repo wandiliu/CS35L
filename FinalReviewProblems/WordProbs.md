@@ -109,4 +109,23 @@ $ sed 's/[()-]//g'
    2.	To specify for only numerals, we use \1 to \9.
 
 ####11. You have a file called one_mb which is exactly 1 megabyte in size. You want to create from it a file of exactly 128 megabytes in size. Please write a shell script to do this with at most 9 lines and no loops, if statements, recursion, or any other logic control structures. Each command, including parameters, must be less than 100 characters in length. (max 9 lines)
-cat one_mb | 
+```
+#!/bin/bash
+file="$1"
+newfile="$2"
+cat $file $file > $newfile
+cat $newfile $newfile > $file
+cat $file $file > $newfile
+cat $newfile $newfile > $file
+cat $file $file > $newfile
+cat $newfile $newfile > $file
+cat $file $file > $newfile
+```
+#####NOTE:
+	1.	Bash scripts should begin with #!/bin/bash
+	2.	files are fed in as arguments, where `$0` is the script itself, `$1` is the first argument, and so on
+	3.	for `cat`, `>` is replacing all previous content, while `>>` appends to previous content
+	4.	Remember to deference using `$`!
+
+ 
+=======
