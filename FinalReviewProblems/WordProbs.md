@@ -14,17 +14,14 @@ is
 ```
 *Note*: If the bash prompt errors out to `-bash: ./Prob2.txt: /bin/grep: bad interpreter: No such file or directory`, try to run the code on the linux server
 
-####2.2 What about 
-```
-#! /usr/bin/env	python
-```
+####2.2 What about ```#! /usr/bin/env	python```?
 
 Correct output: 
 ```
 SyntaxError: invalid syntax
 ```
 
-Explanation: Python has a different syntax, you at least need to call the main function to execute
+**Explanation**: Python has a different syntax, you at least need to call the main function to execute
 
 ####3. What's a symbolic link (soft link), and how is it different from a non-symbolic (hard) link? 
 -      A symbolic link contains the name(reference) of the file it's pointing to
@@ -48,7 +45,7 @@ Some languages, such as C and C++, are prone to buffer overflows as they have no
 	1.	 A program (malicious) attempts to put more data (take up more memory) than the buffer is supposed to hold
 	2.	 A program attempts to put the data in a memory area (what's set aside for the function) that's past the buffer
 	-	 This can crash the program, corrupt data, or cause the execution of malicious code
--	It's a **software security vulnerability*** 
+-	It's a **software security vulnerability**
 -	In a classic buffer overflow, the call stack is overwritten and the function's return pointer is set to transfer control to malicious code when it returns
 - 	Buffer overflow typically happens in 
 	1.     External Data: Programs that relies on external data to control its behavior
