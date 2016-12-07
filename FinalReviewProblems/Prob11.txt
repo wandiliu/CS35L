@@ -1,0 +1,10 @@
+#!/bin/bash
+file="$1"
+newfile="$2"
+cat $file $file > $newfile
+cat $newfile $newfile > $file
+cat $file $file > $newfile
+cat $newfile $newfile > $file
+cat $file $file > $newfile
+cat $newfile $newfile > $file
+cat $file $file > $newfile
